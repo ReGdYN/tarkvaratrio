@@ -1,0 +1,55 @@
+Nendele on vaja leida detailsed küsimused:
+
+--?--Ettekandja peab saama tellimusi sisestada.
+
+Kas tellimuse eest peab maksma kohe või võib arve lahti jätta?
+Kas lahtisel arvel on mingi limiit? 
+Kas see sõltub kliendist? 
+Kas seda limiiti on näiteks arvet alustades krediitkaardi esitamisel võimalik tõsta?
+Kas juba sisestatud arvet saab hiljem laudkonna vahel eraldi arveteks jagada?
+Kas ettekandja peab saama tasumata arvet teisele ettekandjale üle anda?
+Kas tellimuse eest maksmiseks saab kasutada krediitkaarti? 
+Milliseid krediitkaarte?
+Kas ülalkirjeldatud käitumine erineb riigiti?
+
+--?--Ettekandja peab saama tellimuse eest tasu vastu võtta.
+
+Millised on võimalikud makseviisid?
+Kas ettekandja saab tipi?
+Kas kaardimakse korral tulevad lisaprotsendid kliendile tipi jaoks?
+Kas tipp läheb automaatselt arvele juurde või saab klient ise otsustada summa?
+
+--?--Vahetuse vanem peab saama kassa algseisu ja lõppseisu fikseerida
+
+Kas kassa seisu saab fikseerida ainult vahetuse vanem või ka juhataja vmt?
+Kas kassa alg- ja lõppseisu saab fikseerida vaid õhtul ja hommikul (kindlatel kellaaegadel)?
+
+--?--Restoranijuhataja peab saama ettekandja kuukäibest talle palgalisa arvutada
+
+Kas ühe arvega saab olla mitu ettekandjat?
+Kas palgalisa arvutatakse ainult käibest või ka tipist?
+Kas kõik arved peavad olema seotud konkreetse ettekandjaga?
+Kui pikalt hoitakse arveid alles?
+Kas palgalisa on konkreetne protsent käibest või peab juhataja saama valida suurust?
+Millised on üldised ligipääsud süsteemis erinevatele inimestele?
+
+--?--Restoranijuhataja peab saama kesksest laost kaupa juurde tellida
+
+Kas tellida saab ainult restoranijuhataja?
+
+--?--Püsikliendile peab olema võimalik saata kampaaniapakkumisi.
+
+--?--Ettevõtte juhtkond peab saama süsteemist konkreetse restorani kasumiaruande 
+
+------------
+
+1. Intervjuu protokolli(d). Mängige läbi intervjuud vähemalt kolme rolli esindajatega. Igas intervjuus peaks olema vähemalt 20 küsimus-vastus komplekti.
+
+
+2. Erinevad rollid kes süsteemis tegutsevad (nt. Ettekandja). Rollide arv lõplikus lahenduses on teie määrata.
+
+
+3. Kasutajate nõuded operatsioonidele mida süsteem peab toetama (nt Kliendikaardi esitamisel enne arve väljatrükki peab Ettekandja pakkuma kliendile 10% soodustust). Nõuded peavad olema kooskõlas intervjuude tulemustega. Rühm peab olema tuvastanud vähemalt 50 nõuet loodavale süsteemile.
+
+
+4. SMART nõuded kasutatavusele ja jõudlusele. (Vihje - nõue kujul “Süsteem peab olema kiire” ei ole eriti hea nõue). Rühm peab olema tuvastanud vähemalt viis nõuet kasutatavusele ja viis nõuet jõudlusele. 
