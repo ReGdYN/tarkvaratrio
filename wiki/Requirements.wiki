@@ -4,7 +4,7 @@ Nendele on vaja leida detailsed küsimused:
 
 Kas tellimuse eest peab maksma kohe või võib arve lahti jätta?
 Kas lahtisel arvel on mingi limiit? 
-Kas see sõltub kliendist? 
+Jas see sõltub kliendist? 
 Kas seda limiiti on näiteks arvet alustades krediitkaardi esitamisel võimalik tõsta?
 Kas juba sisestatud arvet saab hiljem laudkonna vahel eraldi arveteks jagada?
 Kas ettekandja peab saama tasumata arvet teisele ettekandjale üle anda?
@@ -36,10 +36,28 @@ Millised on üldised ligipääsud süsteemis erinevatele inimestele?
 --?--Restoranijuhataja peab saama kesksest laost kaupa juurde tellida
 
 Kas tellida saab ainult restoranijuhataja?
+Kes saab kauba andmebaasi sisestada (uued tooted vs täiendus)?
+Kas on mingid kindlad kuupäevad, millal saab kaupa tellida?
+Kuidas on keskladu ühendatud meie süsteemiga?
+Kui tihti inventuuri tehakse?
+Kuidas inventuuri tehakse (kas inventuuri tegemine peab olema süsteemi sisse kirjutatud)?
 
---?--Püsikliendile peab olema võimalik saata kampaaniapakkumisi.
+--?--Püsikliendile peab olema võimalik saata kampaaniapakkumisi
 
---?--Ettevõtte juhtkond peab saama süsteemist konkreetse restorani kasumiaruande 
+Kas püsiklientidel on kliendikaardid?
+Kas kliendikaardid on nimelised?
+Kas ja kuidas saadetakse kampaaniapakkumisi?
+Kas allahindlused on igale tootele individuaalselt, tootegruppidele või kõikidele kaupadele?
+Kuidas (kus) saab allahindlust määrata?
+
+--?--Ettevõtte juhtkond peab saama süsteemist konkreetse restorani kasumiaruande
+
+Kuidas kasumit arvestatakse?
+Kas süsteem peab ise aruannet bilansi kohta?
+Mis perioodi järel väljastatakse kasumi aruanne?
+Kas kasumiaruanne väljastatakse automaatselt?
+Mis viisil aruanne saadetakse juhtkonnale?
+Kas see aruanne peab sisaldama ka visuaalseid komponente nt tulpdiagramme?
 
 ------------
 
@@ -48,8 +66,16 @@ Kas tellida saab ainult restoranijuhataja?
 
 2. Erinevad rollid kes süsteemis tegutsevad (nt. Ettekandja). Rollide arv lõplikus lahenduses on teie määrata.
 
+Ettekandja, laotööline, vahetuse vanem, juhataja, juhtkond, köök
+
 
 3. Kasutajate nõuded operatsioonidele mida süsteem peab toetama (nt Kliendikaardi esitamisel enne arve väljatrükki peab Ettekandja pakkuma kliendile 10% soodustust). Nõuded peavad olema kooskõlas intervjuude tulemustega. Rühm peab olema tuvastanud vähemalt 50 nõuet loodavale süsteemile.
 
 
 4. SMART nõuded kasutatavusele ja jõudlusele. (Vihje - nõue kujul “Süsteem peab olema kiire” ei ole eriti hea nõue). Rühm peab olema tuvastanud vähemalt viis nõuet kasutatavusele ja viis nõuet jõudlusele. 
+
+-
+-
+-
+-
+-
