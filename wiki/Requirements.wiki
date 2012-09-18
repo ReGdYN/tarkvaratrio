@@ -63,13 +63,65 @@ Kas see aruanne peab sisaldama ka visuaalseid komponente nt tulpdiagramme?
 
 1. Intervjuu protokolli(d). Mängige läbi intervjuud vähemalt kolme rolli esindajatega. Igas intervjuus peaks olema vähemalt 20 küsimus-vastus komplekti.
 
-
 2. Erinevad rollid kes süsteemis tegutsevad (nt. Ettekandja). Rollide arv lõplikus lahenduses on teie määrata.
 
 Ettekandja, laotööline, vahetuse vanem, juhataja, juhtkond, köök
 
 
-3. Kasutajate nõuded operatsioonidele mida süsteem peab toetama (nt Kliendikaardi esitamisel enne arve väljatrükki peab Ettekandja pakkuma kliendile 10% soodustust). Nõuded peavad olema kooskõlas intervjuude tulemustega. Rühm peab olema tuvastanud vähemalt 50 nõuet loodavale süsteemile.
+3. Kasutajate nõuded operatsioonidele, mida süsteem peab toetama (nt Kliendikaardi esitamisel enne arve väljatrükki peab Ettekandja pakkuma kliendile 10% soodustust). Nõuded peavad olema kooskõlas intervjuude tulemustega. Rühm peab olema tuvastanud vähemalt 50 nõuet loodavale süsteemile.
+
+NÕUDED:
+1-
+2-
+3-
+4-
+5-
+6-
+7-
+8-
+9-
+10-
+11-
+12-
+13-
+14-
+15-
+16-
+17-
+18-
+19-
+20-
+21-
+22-
+23-
+24-
+25-
+26-
+27-
+28-
+29-
+30-
+31-
+32-
+33-
+34-
+35-
+36-
+37-
+38-
+39-
+40-
+41-
+42-
+43-
+44-
+45-
+46-
+47-
+48-
+49-
+50-
+51-
 
 
 4. SMART nõuded kasutatavusele ja jõudlusele. (Vihje - nõue kujul “Süsteem peab olema kiire” ei ole eriti hea nõue). Rühm peab olema tuvastanud vähemalt viis nõuet kasutatavusele ja viis nõuet jõudlusele. 
