@@ -63,6 +63,73 @@ Kas see aruanne peab sisaldama ka visuaalseid komponente nt tulpdiagramme?
 
 1. Intervjuu protokolli(d). Mängige läbi intervjuud vähemalt kolme rolli esindajatega. Igas intervjuus peaks olema vähemalt 20 küsimus-vastus komplekti.
 
+Intervjuu ettekandjaga:
+
+Kas tellimuse eest peab maksma kohe või võib arve lahti jätta?
+Klient võib maksta koheselt või ka lahkudes, vastavalt soovile.
+
+Kas lahtisel arvel on mingi limiit?
+Peaks olema, et vältida külmi arveid. Summa võiks olla umbes 120 eur (~2000 eek).
+
+Kas see (limiit) sõltub kliendist?
+Limiit on ikka.
+
+Kas seda limiiti on näiteks arvet alustades krediitkaardi esitamisel võimalik tõsta?
+Sellisel juhul ei ole, kuna sisestame krd.kaardi numbri süsteemi ja arve saadetakse automaatselt
+
+Kas juba sisestatud arvet saab hiljem laudkonna vahel eraldi arveteks jagada?
+Jah, kindlasti, et kui lahkudes selgub, et inimesed tahavad eraldi maksta, peab see olema võimalik
+
+Kas ettekandja peab saama tasumata arvet teisele ettekandjale üle anda?
+See võimalus peab olema, kuna kui toimub vahetus ja vanad kliendid on veel restoranis, siis peab saama arve üle anda
+
+Kas tellimuse eest maksmiseks saab kasutada krediitkaarti? Milliseid krediitkaarte?
+Jah, saab küll.
+
+Kas ülalkirjeldatud käitumine erineb riigiti?
+Ei erine
+
+Millised on võimalikud makseviisid?
+Sulas, deebet- ja krediitkaardiga
+
+Kas ettekandja saab tipi ja see sisestatakse süsteemi? 
+Tipi saame, aga see pole ülemuste asi, kui palju
+
+Kas kaardimakse korral tulevad lisaprotsendid kliendile tipi jaoks?
+Kaardimaksega % automaatselt juures
+
+Kas tipp läheb automaatselt arvele juurde või saab klient ise otsustada summa?
+Kaardiga makstes lisatakse automaatselt 10%, meie tip.
+
+Kas kassa seisu saab fikseerida ainult vahetuse vanem või ka juhataja vmt?
+Seda peavad saama kõik teha, kuna kui vah. vanem on haige, peab tava ettekandja selle tehtud saama
+
+Kas kassa alg- ja lõppseisu saab fikseerida vaid õhtul ja hommikul (kindlatel kellaaegadel)?
+Iga kell, kuna riigiti erinevad või vahepeal vahetatakse vahetusi jne.
+
+Kas ühe arvega saab olla mitu ettekandjat (kuidas tipiga)?
+Arve on konkreetselt ühe ettekandja all, pärast vaatame ise kuidas tipi jaotame
+
+Kas tellida saab ainult restoranijuhataja?
+Jah, meie sellega ei tegele
+
+Kes saab kauba andmebaasi sisestada (uued tooted vs täiendus)?
+Tegeleb siiski ainult juhataja
+
+Kas püsiklientidel on kliendikaardid?
+Jah, on küll
+
+Kas kliendikaardid on nimelised?
+Plastikaartidel iseenesest pole, aga andmebaasis on kirjas nimi.
+
+Mis info kliendi kohta peab kliendikaardil olema?
+Nimi ja e-mail
+
+Kuidas (kus) saab allahindlust määrata?
+Eraldi ei saagi, kliendikaardiga allahindlus peaks tulema automaatselt, muid juhtusid pole.
+
+
+
 2. Erinevad rollid kes süsteemis tegutsevad (nt. Ettekandja). Rollide arv lõplikus lahenduses on teie määrata.
 
 Ettekandja, laotööline, vahetuse vanem, juhataja, juhtkond, köök
