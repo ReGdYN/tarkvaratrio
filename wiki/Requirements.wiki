@@ -265,40 +265,52 @@ NÕUDED:
 
 24-Süsteem peab võimaldama töötajatele palgalisa arvutamise.
 
-25-
+25-Kuuaruanne saadetakse määratud inimestele.
 
-26-
+26-Süsteem peab arvutama müügi ja omahinna vahe.
 
-27-
+27-Süsteem peab võimaldama töötajatele palga arvutamise.
 
-28-
+28-Süsteem peab võimaldama kasumi arvutamise.(püsikuludega jms)
 
-29-
+29-Kaardimakse tipi arvutamine ettekandja kohta.
 
-30-
+30-Süsteem peab võimaldama maksmise sularahas.
 
-31-
+31-Süsteem peab võimaldama maksmise deebetkaardiga.
 
-32-
+32-Süsteem peab eristama kasutajagruppe ettekandja ja juhataja.
 
-33-
+33-Toote hindu saab süsteemis määrata.
 
-34-
+34-Süsteem peab bilansi kohta järge.
 
 35-
 
 36-
+
 37-
+
 38-
+
 39-
+
 40-
+
 41-
+
 42-
+
 43-
+
 44-
+
 45-
+
 46-
+
 47-
+
 48-Süteem peab võimaldama kesklaost kauba tellimise.
 49-Kassa alg- ja lõppseisu fikseerimine.
 50-Ettekandja peab saama tasu võtta.
