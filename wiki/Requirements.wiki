@@ -213,7 +213,50 @@ Juhataja peab saama toote hinda muuta. Allahindlus on fikseeritud kliendikaardig
 
 2. Erinevad rollid kes süsteemis tegutsevad (nt. Ettekandja). Rollide arv lõplikus lahenduses on teie määrata.
 
-Ettekandja, juhataja/juhtkond
+Juhatusele
+
+Millised on võimalikud makseviisid? Sularaha, deebet ja krediitkaart.
+
+Kas arve avamine fikseeritakse ajaliselt?
+Jah. Arve avamine fikseeritakse ajaliselt ning samuti fikseeritakse iga toote tellimine ajaliselt minutilise täpsusega.
+
+Kas kassa seisu saab fikseerida ainult vahetuse vanem või ka juhataja vmt?  Kõik saavad igal kellaajal.
+
+Kas kassa alg- ja lõppseisu saab fikseerida vaid õhtul ja hommikul (kindlatel kellaaegadel)? Igal ajal.
+
+Kas palgalisa arvutatakse ainult käibest või ka tipist? Käibest.
+
+Kui pikalt hoitakse arveid alles? Seaduses ettenäidatud aja, 3a.
+
+Kas palgalisa on konkreetne protsent käibest või peab juhataja saama valida suurust? Vaikimisi 1%, aga juhataja saab ka muuta.
+
+Millised on üldised ligipääsud süsteemis erinevatele inimestele? Ettekanda-Juhataja/Juhtkond
+
+Kas tellida saab ainult restoranijuhataja? Jah
+
+Kes saab kauba andmebaasi sisestada (uued tooted vs täiendus)? Juhataja
+
+Kuidas inventuuri tehakse (kas inventuuri tegemine peab olema süsteemi sisse kirjutatud)? Süsteemiväliselt
+
+Kas püsiklientidel on kliendikaardid? Jah
+
+Kas kliendikaardid on nimelised? Seotud andmebaasiga, nimelised
+
+Kas ja kuidas saadetakse kampaaniapakkumisi? E-mailile
+
+Kas allahindlused on igale tootele individuaalselt, tootegruppidele või kõikidele kaupadele? Hindu peab saama määrata eraldi
+
+Kuidas kasumit arvestatakse? Müüdud tooted-palgad-püsikulud
+
+Kas süsteem peab ise aruannet bilansi kohta? Jah
+
+Mis perioodi järel väljastatakse kasumi aruanne? Kord kuus
+
+Kas kasumiaruanne väljastatakse automaatselt? Jah
+
+Mis viisil aruanne saadetakse juhtkonnale? E-mailil automaatselt.
+
+Kas see aruanne peab sisaldama ka visuaalseid komponente nt tulpdiagramme? Oleks ilus.
 
 
 3. Kasutajate nõuded operatsioonidele, mida süsteem peab toetama (nt Kliendikaardi esitamisel enne arve väljatrükki peab Ettekandja pakkuma kliendile 10% soodustust). Nõuded peavad olema kooskõlas intervjuude tulemustega. Rühm peab olema tuvastanud vähemalt 50 nõuet loodavale süsteemile.
@@ -287,6 +330,8 @@ NÕUDED:
 
 35-Tellimusi peab saama sisestada igal ajal.
 
+
+
 36-
 
 37-
@@ -319,8 +364,16 @@ NÕUDED:
 
 4. SMART nõuded kasutatavusele ja jõudlusele. (Vihje - nõue kujul “Süsteem peab olema kiire” ei ole eriti hea nõue). Rühm peab olema tuvastanud vähemalt viis nõuet kasutatavusele ja viis nõuet jõudlusele. 
 
--
--
--
--
--
+KASUTATAVUSELE
+- Lihtne liikuda ühest sektsioonist teise
+- Lihtne disain-arhitektuur
+- Nupud peavad olema piisavalt suured front endis
+- Peab töötama WIN 7 64 bitiga
+- Kiire liiklemine erinevate sektsioonide vahel
+
+JÕUDLUSELE
+- POS süsteemi klienditeenindaja osa peab käivituma 30 sekundi jooksul
+- Ükski lihtoperatsioon ei tohi võtta üle 0.2 sekundi
+- Kuni 100 000 toote haldamine kiire
+- kuni 30 000 püsikliendi võimaldamine
+- 
