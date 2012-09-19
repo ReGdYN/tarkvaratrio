@@ -285,7 +285,7 @@ NÕUDED:
 
 34-Süsteem peab bilansi kohta järge.
 
-35-
+35-Tellimusi peab saama sisestada igal ajal.
 
 36-
 
