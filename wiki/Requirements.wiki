@@ -133,51 +133,80 @@ Juhataja
 _________________
 Millised on võimalikud makseviisid?
 Sularaha, deebet- ja krediitkaartiga.
+
 Kas ettekandja saab tipi ning see sisestatakse süsteemi?
-Ettekandja saab tipi sularahas, kuid seda ei sisestada süsteemi. Kaardimakse korral 10% arvestab süsteem ise juurde ning kuu lõpus saab vaadata tipi suurust.
+Ettekandja saab tipi sularahas, kuid seda ei sisestada süsteemi. 
+
+Kaardimakse korral 10% arvestab süsteem ise juurde ning kuu lõpus saab vaadata tipi suurust.
+
 Kas kaardimakse korral tulevad lisaprotsendid kliendile tipi jaoks?
 Ei. 10% on fikseeritud.
+
 Kas kassa seisu saab fikseerida ainult vahetuse vanem või ka juhataja vmt?
+
 Kõik restorani töötajad peavad saama seda fikseerida.
 Kas kassa alg- ja lõppseisu saab fikseerida vaid õhtul ja hommikul (kindlatel kellaaegadel)?
+
 Kassa seisu peab saama fikseerida olenemata kellaajast.
 Kas lahtisel arvel on mingi limiit?
+
 Jah on. Üldiselt 100€ ühe inimese kohta.
 Kas limiit sõltub kliendist?
+
 Jah. Kliendikaardi omanikul limiit puudub.
 Kas seda limiiti on näiteks arvet alustades võimalik tõsta?
+
 Krediitkaardi esitamisel limiit puudub. Muul juhul tuleb limiidi täitudes arve tasuda ning alustada uut arvet.
+
 Kas ühe arvega saab olla mitu ettekandjat?
-Ei saa. Väga suurte laudade puhul jagavad ettekandjad ise. Arveid peab olema võimalik liigutada ja tükkideks teha.
+Ei saa. Väga suurte laudade puhul jagavad ettekandjad ise. Arveid peab 
+olema võimalik liigutada ja tükkideks teha.
+
 Kas palgalisa arvutatakse ainult käibest või ka tipist?
 Palgalaisa arvutatakse ainult käibes.
+
 Kas kõik arved peavad olema seotud konkreetse ettekandjaga?
 Algselt seotakse arve ettekandjaga, kuid seda peab olema võimalik muuta.
+
 Kui pikalt hoitakse arveid alles?
 Arveid hoitakse alles 3 aastat. Vanemad arved kustutatakse igal hommikul kassa avamisel.
+
 Kas palgalisa on konkreetne protsent käibest või peab juhataja saama valida palgalisa suurust?
+
 Palgalisa suurust saab muuta, kuid vaikimisi on selleks üks protsent käibest.
+
 Millised on üldised ligipääsud süsteemis erinevatel inimestel?
 Lokaalselt on nendeks juhataja ja ettekandja.
+
 Kas tellida saab ainult restoranijuhataja?
 Jah.
+
 Kes saab kauba andmebaasi sisestada (uued tooted vs täiendus)?
 Ainult Juhataja.
+
 Kas on mingid kindlad kuupäevad, millal saab kaupa tellida?
 Tellimuse peab saama esitada olenemata ajast.
+
 Kuidas on keskladu ühendatud meie süsteemiga?
 Kesklaost võimalikud tellitavad tooted peavad olema juhatajale näha.
+
 Kui tihti inventuuri tehakse?
 Mitte harvem kui kord poole aasta jooksul.
+
 Kuidas inventuuri tehakse (kas inventuuri tegemine peab olema süsteemi sissekirjutatud)?
 Inventuuriga tegeleb restoran ise ning see ei pea olema süsteemi sisse kirjutatud.
+
 Kas püsiklientidel on kliendikaardid?
 Jah on küll.
+
 Mis info peab kliendikaardi omaniku kohta süsteemis olema?
 Andmebaasis peavad olema kirjas kliendi nimi, email, kliendikaardi number.
+
 Kas ja kuidas saadetakse kampaaniapakkumisi?
 Kõigile klientidele saadetakse. Kampaaniapakkumiste mittesaatmist kontrollib turundustarkvara.
+
 Kas allahindlused on igale tootele individuaalselt, tootegruppidele või kõikidele kaupadele?
+
 Juhataja peab saama toote hinda muuta. Allahindlus on fikseeritud kliendikaardiga kõikidele toodetele.
 
 2. Erinevad rollid kes süsteemis tegutsevad (nt. Ettekandja). Rollide arv lõplikus lahenduses on teie määrata.
