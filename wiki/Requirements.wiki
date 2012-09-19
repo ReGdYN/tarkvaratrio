@@ -253,24 +253,40 @@ NÕUDED:
 
 18-Uut toodet saab sisestada juhataja.
 
-19-
+19-Süsteem peab võimaldama kliendikaartide kasutamist.
 
-20-
-21-
-22-
-23-
-24-
+20-KK info peab olema andmebaasis.(Kood, omanik, email)
+
+21-Kliendikaardi allahindlus peab vaikimisi määratud(10%)
+
+22-Kampaaniainfot peab saama kliendikaardi omanikele saata.
+
+23-Kampaania infot saab saata vaid juhataja.
+
+24-Süsteem peab võimaldama töötajatele palgalisa arvutamise.
+
 25-
+
 26-
+
 27-
+
 28-
+
 29-
+
 30-
+
 31-
+
 32-
+
 33-
+
 34-
+
 35-
+
 36-
 37-
 38-
@@ -283,9 +299,9 @@ NÕUDED:
 45-
 46-
 47-
-48-
-49-
-50-
+48-Süteem peab võimaldama kesklaost kauba tellimise.
+49-Kassa alg- ja lõppseisu fikseerimine.
+50-Ettekandja peab saama tasu võtta.
 51-Ettekandja peab saama tellimusi sisestada.
 
 
