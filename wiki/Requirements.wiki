@@ -213,31 +213,48 @@ Juhataja peab saama toote hinda muuta. Allahindlus on fikseeritud kliendikaardig
 
 2. Erinevad rollid kes süsteemis tegutsevad (nt. Ettekandja). Rollide arv lõplikus lahenduses on teie määrata.
 
-Ettekandja, laotööline, vahetuse vanem, juhataja, juhtkond, köök
+Ettekandja, juhataja/juhtkond
 
 
 3. Kasutajate nõuded operatsioonidele, mida süsteem peab toetama (nt Kliendikaardi esitamisel enne arve väljatrükki peab Ettekandja pakkuma kliendile 10% soodustust). Nõuded peavad olema kooskõlas intervjuude tulemustega. Rühm peab olema tuvastanud vähemalt 50 nõuet loodavale süsteemile.
 
 NÕUDED:
-1-
-2-
-3-
-4-
-5-
-6-
-7-
-8-
-9-
-10-
-11-
-12-
-13-
-14-
-15-
-16-
-17-
-18-
+1-Ühte arvet peab saama mitmeks teha.
+
+2-Arveid peab saama liigutada ettekandjate vahel.
+
+3-Igal arvele lisatud tootel peab olema TIMESTAMP.
+
+4-Arvet peab saama tasuda igal ajal.
+
+5-Arvel peab olema limiit.
+
+6-Arvel peab olema märgitud klientide arv.
+
+7-Limiiti peab saama restoraniti määrata.(def100€/inim.)
+
+8-Kaardiga makstes peab arve summale lisama 10%, eraldi kirja.
+
+9-Süsteem peab eristama krediitkaarti.
+
+10-Süsteemil peab olema conf fail, milles märgitakse ettekandja palgalisa ning arve limiit, arvete säilitamise aeg.
+
+11-Kassatšekke peab saama välja printida igal ajal.
+
+12-Kassa avamisel kustutatakse vanad arved(def3a).
+
+13-Kassa avamisel uue kuu kontroll.
+
+14-Kassa avamisel uuel kuul koostatakse aruanne.
+
+15-Ühel arvel peab olema märgitud üks ettekandja.
+
+17-Tellimusi saab sisestada vaid juhataja.
+
+18-Uut toodet saab sisestada juhataja.
+
 19-
+
 20-
 21-
 22-
@@ -269,7 +286,7 @@ NÕUDED:
 48-
 49-
 50-
-51-
+51-Ettekandja peab saama tellimusi sisestada.
 
 
 4. SMART nõuded kasutatavusele ja jõudlusele. (Vihje - nõue kujul “Süsteem peab olema kiire” ei ole eriti hea nõue). Rühm peab olema tuvastanud vähemalt viis nõuet kasutatavusele ja viis nõuet jõudlusele. 
