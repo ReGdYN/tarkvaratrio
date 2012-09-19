@@ -211,7 +211,8 @@ Kas allahindlused on igale tootele individuaalselt, tootegruppidele või kõikid
 
 Juhataja peab saama toote hinda muuta. Allahindlus on fikseeritud kliendikaardiga kõikidele toodetele.
 
-2. Erinevad rollid kes süsteemis tegutsevad (nt. Ettekandja). Rollide arv lõplikus lahenduses on teie määrata.
+
+------
 
 Juhatusele
 
@@ -254,10 +255,24 @@ Mis perioodi järel väljastatakse kasumi aruanne? Kord kuus
 
 Kas kasumiaruanne väljastatakse automaatselt? Jah
 
+Kas disain peab olema skalleeruv? Jah, aga päris väikeseks ei tohi minna
+
+Kas kõik arved peavad olema süsteemis kohe nähtavad? Jah
+
+Kuidas juhataja süsteemis enda seadeid haldab? Eraldi kasutajaliidesega
+
+Mis info peab olema arvel? lisaks restoraniinfole ka klienditeenindaja nimi ja juuksevärv
+
+Kas me võime vigase süsteemi ehitada? Ei
+
 Mis viisil aruanne saadetakse juhtkonnale? E-mailil automaatselt.
 
 Kas see aruanne peab sisaldama ka visuaalseid komponente nt tulpdiagramme? Oleks ilus.
+------
 
+2. Erinevad rollid kes süsteemis tegutsevad (nt. Ettekandja). Rollide arv lõplikus lahenduses on teie määrata.
+
+Ettekandja, Juhataja/Juhatus
 
 3. Kasutajate nõuded operatsioonidele, mida süsteem peab toetama (nt Kliendikaardi esitamisel enne arve väljatrükki peab Ettekandja pakkuma kliendile 10% soodustust). Nõuded peavad olema kooskõlas intervjuude tulemustega. Rühm peab olema tuvastanud vähemalt 50 nõuet loodavale süsteemile.
 
@@ -330,36 +345,37 @@ NÕUDED:
 
 35-Tellimusi peab saama sisestada igal ajal.
 
+36- Aruanne võiks sisaldada tulpdiagramme.
 
+37- Skalleeruv disain
 
-36-
+38- Kõik arved peavad olema nähtavad
 
-37-
+39- Juhatajale peab olema eraldi kasutajaliides.
 
-38-
+40- Tooteid peab saama lisada
 
-39-
+41- Tooteid peab saama muuta
 
-40-
+42- TOoteid peab saama kustutada
 
-41-
+43- Uusi kasutajaid peab saama lisada
 
-42-
+44- ... kustutada
 
-43-
+45- ... ja muuta
 
-44-
+46- Klienditeenindaja juuksevärv ja nimi.
 
-45-
+47- Ettekandja peab saama tellimusi sisestada.
 
-46-
+48- Süteem peab võimaldama kesklaost kauba tellimist.
 
-47-
+49- Kassa alg- ja lõppseisu fikseerimine.
 
-48-Süteem peab võimaldama kesklaost kauba tellimise.
-49-Kassa alg- ja lõppseisu fikseerimine.
-50-Ettekandja peab saama tasu võtta.
-51-Ettekandja peab saama tellimusi sisestada.
+50- Ettekandja peab saama tasu võtta.
+
+51- Süsteem peab toimima.
 
 
 4. SMART nõuded kasutatavusele ja jõudlusele. (Vihje - nõue kujul “Süsteem peab olema kiire” ei ole eriti hea nõue). Rühm peab olema tuvastanud vähemalt viis nõuet kasutatavusele ja viis nõuet jõudlusele. 
@@ -370,10 +386,11 @@ KASUTATAVUSELE
 - Nupud peavad olema piisavalt suured front endis
 - Peab töötama WIN 7 64 bitiga
 - Kiire liiklemine erinevate sektsioonide vahel
+- värvid: roosa ja roheline
 
 JÕUDLUSELE
 - POS süsteemi klienditeenindaja osa peab käivituma 30 sekundi jooksul
-- Ükski lihtoperatsioon ei tohi võtta üle 0.2 sekundi
-- Kuni 100 000 toote haldamine kiire
-- kuni 30 000 püsikliendi võimaldamine
-- 
+- Ükski lihtoperatsioon ei tohi võtta üle 3 sekundi
+- Tootekataloog peab võimaldama 100 000 toodet
+- Püsikliente peab saama lisada vähemalt 1 000 000
+- Igahommikune chech-in ei tohi võtta rohkem kui 5 minutit
