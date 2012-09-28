@@ -1,0 +1,22 @@
+= Kuu aruande väljastamine =
+
+|| *Use Case ID:* || 603 ||
+|| *Use Case Name:* || Kuu aruande väljastamine ||
+|| *Created By:* || Henri Molloka || *Last Updated By:* || Taavi Jaanson ||
+|| *Date Created:* || 20.9.12 || *Date Last Updated:* || 24.9.12 ||
+
+|| *Actors:* ||	Juhatus, Juhataja ||
+|| *Description:* || Suurepärane kuud analüüsiv kokkuvõte, et mõõta edukust ||
+|| *Trigger:* || Uus kuu ||
+|| *Preconditions:* || Varem pole selle kuu aruannet väljastatud ||
+|| *Postconditions:* || Aruanne on koostatud, tehakse märge ||
+|| *Normal Flow:* || Arvutatakse kokku kõik eelmisel kuul suletud arved, arvutatakse käive, sealhulgas palgad, tellimuste maksumused, muud väljaminekud ja sissetulekud, ajutine tabel arvetest aruande koostamise ajal ||
+|| *Alternative Flows:* || - ||
+|| *Exceptions:* || Serveri surm, arvuti jookseb aruande koostamise käigus kokku ||
+|| *Includes:* || Conf.file lugemine, kassa avamine, palkade arvutamine || 
+|| *Priority:* || P2 ||
+|| *Frequency of Use:* || Üks kord kuus (harva rohkem) ||
+|| *Business Rules:* || Vajadusel lisainformatsiooni järgi, tuleb see sisse implementeerida. Aruanne väljastatakse vastavalt raamatupidajate ja juhatuse vajadustele ||
+|| *Special Requirements:* || Ülevaatlik, andmerohke ||
+|| *Assumptions:* || Palkade arvutamiseks, majandusaasta aruande väljastamiseks, vähendamaks inimeste tööd ||
+|| *Notes and Issues:* || No comments ||
