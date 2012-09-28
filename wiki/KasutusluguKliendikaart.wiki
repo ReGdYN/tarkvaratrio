@@ -1,0 +1,22 @@
+= Kliendikaardi väljastamine =
+
+|| *Use Case ID:* || 476 ||
+|| *Use Case Name:* || Kliendikaardi väljastamine ||
+|| *Created By:* || Taavi Jaanson || *Last Updated By:* || - ||
+|| *Date Created:* || 27.9.12 || *Date Last Updated:* || - ||
+
+|| *Actors:* ||	Ettekandja ||
+|| *Description:* || Klient soovib sooduskaarti, ettekandja väljastab talle selle ||
+|| *Trigger:* || Klient soovib kliendikaarti ||
+|| *Preconditions:* || Kliendil ei ole kliendikaarti, klient annab oma info ||
+|| *Postconditions:* || Klient saab kliendikaardi, andmed on sisestatud andmebaasi ||
+|| *Normal Flow:* || Kõik vajalikud andmed on olemas, plastikaarte on alles ||
+|| *Alternative Flows:* || Plastikkaarte pole, andmed sisestatakse, aga kaart väljastatakse hiljem ||
+|| *Exceptions:* || Klient ei anna andmeid, nimed kattuvad, e-mail on kasutuses ||
+|| *Includes:* || Klient || 
+|| *Priority:* || P4 ||
+|| *Frequency of Use:* || Palju kasutatav, iga uue kliendi lisamisel ||
+|| *Business Rules:* || Püsiklientide saamise ja hoidmise seisukohast oluline, kui saab odavamalt käib tihemini ||
+|| *Special Requirements:* || Plastikkaart ei tohiks puudutamisel puruneda, andmete sisestamine ei tohi võtta rohkem kui 5 minutit ||
+|| *Assumptions:* || Sooduskaarte kasutatakse ||
+|| *Notes and Issues:* || No comments ||
