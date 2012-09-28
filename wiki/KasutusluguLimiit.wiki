@@ -1,0 +1,22 @@
+= Arve limiidi määramine =
+
+|| *Use Case ID:* ||	133 ||
+|| *Use Case Name:* ||	Arve limiidi määramine ||
+|| *Created By:* || Kristjan-Julius Laak || *Last Updated By:* || Kristjan-Julius Laak||
+|| *Date Created:* || 24.9.12 || *Date Last Updated:* || 26.9.12 ||
+
+|| *Actors:* ||	Juhatus, Juhataja ||
+|| *Description:* || Igal arvel on määratud limiit, et vältida külmi arveid ja suurt kahjumit arve maksmata jätmisest ||
+|| *Trigger:* || Uue arve avamine ||
+|| *Preconditions:* || Inimeste arv lauas, krediitkaarti pole ||
+|| *Postconditions:* || Määratakse limiit ||
+|| *Normal Flow:* || Vastavalt inimeste arvule määratakse limiit kogu arvele ja seda ei ületata ||
+|| *Alternative Flows:* || Inimesi lisandub hiljem juurde, krediitkaardi olemasolul limiit tühistatakse ||
+|| *Exceptions:* || Sisestatakse krediitkaart ||
+|| *Includes:* || Arve avamine, conf.file lugemine(limiidi suurus)|| 
+|| *Priority:* || P4 ||
+|| *Frequency of Use:* || Vähemalt iga arve avamisel ||
+|| *Business Rules:* || Limiit on vastavuses majandusolukorraga, firma äriliste eesmärkidega ja vastavuses toodete hindadega ||
+|| *Special Requirements:* || - ||
+|| *Assumptions:* || Kahjude minimeerimine ||
+|| *Notes and Issues:* || No comments ||
