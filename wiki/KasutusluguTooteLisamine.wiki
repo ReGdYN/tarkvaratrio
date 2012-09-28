@@ -1,0 +1,22 @@
+= Toote lisamine =
+
+|| *Use Case ID:* || 18 ||
+|| *Use Case Name:* || Toote lisamine ||
+|| *Created By:* || Taavi Jaanson || *Last Updated By:* || Henri Molloka ||
+|| *Date Created:* || 19.9.12 || *Date Last Updated:* || 19.9.12 ||
+
+|| *Actors:* ||	Juhatus, Juhataja ||
+|| *Description:* || Uue toote lisandumisel menüüsse, lisatakse see andmebaasi ||
+|| *Trigger:* || Müüdavatesse toodetesse lisandub uus toode ||
+|| *Preconditions:* || Seda toodet pole nimekirjas ||
+|| *Postconditions:* || Toode on lisatud nimekirja ||
+|| *Normal Flow:* || Täidetakse kõik lahtrid, toode lisatakse andmebaasi ||
+|| *Alternative Flows:* || Mõni lahter jääb täitmata, küsitakse uuesti ||
+|| *Exceptions:* || Sama nimega toode on juba olemas ||
+|| *Includes:* || Tootenimekiri || 
+|| *Priority:* || P2 ||
+|| *Frequency of Use:* || Iga toote lisanduses, kasutatakse palju ||
+|| *Business Rules:* || Toote lisamisel peab müügihind olema suurem kui omahind ||
+|| *Special Requirements:* || Ükski lahter ei tohi jääda tühjaks ||
+|| *Assumptions:* || Tooteid tuleb alati juurde, äärmiselt vajalik ||
+|| *Notes and Issues:* || No comments ||
