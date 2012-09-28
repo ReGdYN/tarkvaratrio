@@ -1,0 +1,22 @@
+= Kliendikaardi väljastamine =
+
+|| *Use Case ID:* || 27 ||
+|| *Use Case Name:* || Töötaja palga arvutamine ||
+|| *Created By:* || Kristjan-Julius Laak || *Last Updated By:* || - ||
+|| *Date Created:* || 19.9.12 || *Date Last Updated:* || - ||
+
+|| *Actors:* ||	Juhataja, Juhatus ||
+|| *Description:* || Töötaja palga arvutamiseks arvutatakse protsent eelmise kuu temaga otseselt seotud käibest ja liidetakse põhipalgale ||
+|| *Trigger:* || Juhataja otsustab palka maksta ||
+|| *Preconditions:* || Töötaja on tööd teinud, töötajaga on leping ||
+|| *Postconditions:* || Genereeritakse palgatabel ||
+|| *Normal Flow:* || Arvestatakse palk käibest ja põhipalgast olenevalt ||
+|| *Alternative Flows:* || Töötajale arvestatakse põhipalk, kui käive liiga väike või ta enam ei tööta ||
+|| *Exceptions:* || Int overflow!!! ||
+|| *Includes:* || Conf.file, aruanne || 
+|| *Priority:* || P4 ||
+|| *Frequency of Use:* || Korra kuus ||
+|| *Business Rules:* || Palk peab olema arvutatud enne vastavas lepingus kirjas olevat palga maksmise kuupäeva, palk peab olema motiveeriv ja konkurentsivõimaline ||
+|| *Special Requirements:* || Täistööajalisele töötajale ei saa maksta vähem kui miinimumpalka ||
+|| *Assumptions:* || Kiirendada tööd ja vähendada juhataja koormust arvutamisel ||
+|| *Notes and Issues:* || No comments ||
