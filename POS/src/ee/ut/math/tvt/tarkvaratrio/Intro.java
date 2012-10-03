@@ -1,11 +1,15 @@
 package ee.ut.math.tvt.tarkvaratrio;
 
-public class Intro {
+import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URL;
 
+public class Intro {
 	
-	public static void main(String[] args) {
+	public static void main(String[] args)  {
 		
 		IntroUI.createWindow();
+		
 	}
 
 }

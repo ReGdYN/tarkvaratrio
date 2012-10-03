@@ -16,15 +16,17 @@
 
     <target name="compile">
         <mkdir dir="${classes.dir}"/>
+        <copy todir="${classes.dir}">
+  			<fileset dir="${src.dir}">
+    		<include name="**/img/*"/>
+  			</fileset>
+		</copy>
         <javac srcdir="${src.dir}" destdir="${classes.dir}"/>
     </target>
 
     <target name="jar" depends="compile">
         <mkdir dir="${jar.dir}"/>
         <jar destfile="${jar.dir}/${ant.project.name}.jar" basedir="${classes.dir}">
-            <fileset dir="${src}">
-            	<include name="ee/ut/math/tvt/tarkvaratrio/img/*.png" />
-        	</fileset>
             <manifest>
                 <attribute name="Main-Class" value="${main-class}"/>
             </manifest>
