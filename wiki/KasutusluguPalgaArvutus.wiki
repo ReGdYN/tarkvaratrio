@@ -1,4 +1,4 @@
-= Kliendikaardi väljastamine =
+= Palga arvutamine =
 
 || *Use Case ID:* || 27 ||
 || *Use Case Name:* || Töötaja palga arvutamine ||
