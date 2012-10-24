@@ -1,6 +1,7 @@
 package ee.ut.math.tvt.tarkvaratrio;
 
 import java.awt.*;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -10,7 +11,7 @@ import java.util.Properties;
 
 import javax.swing.*; 
 
-public class IntroUI {
+public class IntroUI extends JFrame{
 	
 	static String kursus;
 	static String nimi;
@@ -22,10 +23,11 @@ public class IntroUI {
 	static URL asukoht;
 	
 	
-	static void createWindow() {
+	public IntroUI() {
 		
 		JFrame raam = new JFrame("IntroUI");
 		raam.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
 		Container sisu = raam.getContentPane();
 		sisu.setLayout(new GridLayout(3,1));
 		JLabel label1;
@@ -94,6 +96,7 @@ public class IntroUI {
 		//raam.pack();
 		raam.setSize(300, 300);
 		raam.setVisible(true); 
+		
 		
 	}
 }
