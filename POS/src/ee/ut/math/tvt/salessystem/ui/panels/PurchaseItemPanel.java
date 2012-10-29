@@ -1,8 +1,5 @@
 package ee.ut.math.tvt.salessystem.ui.panels;
 
-import ee.ut.math.tvt.salessystem.domain.data.SoldItem;
-import ee.ut.math.tvt.salessystem.domain.data.StockItem;
-import ee.ut.math.tvt.salessystem.ui.model.SalesSystemModel;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
@@ -11,6 +8,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import java.util.NoSuchElementException;
+
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -20,6 +18,10 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
+
+import ee.ut.math.tvt.salessystem.domain.data.SoldItem;
+import ee.ut.math.tvt.salessystem.domain.data.StockItem;
+import ee.ut.math.tvt.salessystem.ui.model.SalesSystemModel;
 
 
 /**
@@ -184,8 +186,20 @@ public class PurchaseItemPanel extends JPanel {
             } catch (NumberFormatException ex) {
                 quantity = 1;
             }
-            model.getCurrentPurchaseTableModel()
-                .addItem(new SoldItem(stockItem, quantity));
+            try{
+            	//TODO implement checking warehouse.
+            	Integer inStock;
+            	inStock = model.getWarehouseTableModel().getItemById(Integer.parseInt(barCodeField.getSelectedItem().toString())).getQuantity();
+            	
+            	if (quantity > inStock)
+            		throw new Exception("Item Stock too low.");
+            	            	
+	            model.getCurrentPurchaseTableModel()
+	                .addItem(new SoldItem(stockItem, quantity));
+            }catch (Exception e){
+            	//TODO implement warning if item not in warehouse.
+            	System.out.println("Exception: "+ e);
+            }
         }
     }
 
