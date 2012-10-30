@@ -11,6 +11,9 @@ import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JDialog;
@@ -171,20 +174,16 @@ public class PurchaseTab {
 
   /** Event handler for the <code>submit purchase</code> event. */
   protected void submitPurchaseButtonClicked() {
-    log.info("Sale complete");
-    try {
-      log.debug("Contents of the current basket:\n" + model.getCurrentPurchaseTableModel());
-      domainController.submitCurrentPurchase(
-          model.getCurrentPurchaseTableModel().getTableRows()
-      );
+
+    
+     
       
-   //   JFrame frame = new JFrame("Payment");
-   //   frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+      //Dialogue window
       
-      
-      JTextField purchasePrice = new JTextField();
-      JTextField paymentAmount = new JTextField();
-      JTextField moneyBack = new JTextField("0");
+      final JTextField purchasePrice = new JTextField();
+      final JTextField paymentAmount = new JTextField("0.0");
+      final JTextField moneyBack = new JTextField("0.0");
       
       purchasePrice.setEditable(false);
       moneyBack.setEditable(false);
@@ -192,7 +191,9 @@ public class PurchaseTab {
       JButton confirmPayment = new JButton("Confirm");
       JButton revertPayment = new JButton("Reset");
       
-      JDialog dialog = new JDialog();
+      purchasePrice.setText(Double.toString(model.getCurrentPurchaseTableModel().getSum()));
+      
+      final JDialog dialog = new JDialog();
       
       dialog.setLayout(new GridLayout(4, 2));
       
@@ -212,11 +213,61 @@ public class PurchaseTab {
       
       dialog.pack();
       dialog.setVisible(true);
-      model.getCurrentPurchaseTableModel().clear();
+    
+      paymentAmount.addKeyListener(new KeyListener() {
+		
+		@Override
+		public void keyTyped(KeyEvent e) {
+			// TODO Auto-generated method stub
+			try {
+				double mb=0;
+				mb = Double.parseDouble(paymentAmount.getText()) -  Double.parseDouble(purchasePrice.getText()) ;
+				moneyBack.setText(Double.toString(mb));
+				
+			}catch(Exception ex){
+				
+			}
+		}
+		
+		@Override
+		public void keyReleased(KeyEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+		@Override
+		public void keyPressed(KeyEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+	});
       
-    } catch (VerificationFailedException e1) {
-      log.error(e1.getMessage());
-    }
+      
+      confirmPayment.addActionListener(new ActionListener() {
+          public void actionPerformed(ActionEvent e) {
+        	    log.info("Sale complete");
+              try {
+        	      log.debug("Contents of the current basket:\n" + model.getCurrentPurchaseTableModel());
+        	      domainController.submitCurrentPurchase(
+        	          model.getCurrentPurchaseTableModel().getTableRows()
+              );
+            } catch (VerificationFailedException e1) {
+              log.error(e1.getMessage());
+            }
+               model.getCurrentPurchaseTableModel().clear(); 
+               dialog.setVisible(false);
+               dialog.dispose();
+          }
+      });
+      
+      revertPayment.addActionListener(new ActionListener() {
+          public void actionPerformed(ActionEvent e) {
+        	  dialog.setVisible(false);
+              dialog.dispose();
+          }
+      });
+      
+
   }
 
 
