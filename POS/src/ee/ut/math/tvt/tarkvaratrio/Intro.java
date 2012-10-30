@@ -11,7 +11,7 @@ import ee.ut.math.tvt.salessystem.ui.SalesSystemUI;
 
 
 public class Intro {
-	
+	//Test
 	private static final Logger log = Logger.getLogger(Intro.class);
 	private static final String MODE = "console";
 	
