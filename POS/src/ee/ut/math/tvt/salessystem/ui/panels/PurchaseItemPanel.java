@@ -123,8 +123,8 @@ public class PurchaseItemPanel extends JPanel {
             	fillDialogFields();
             }
         });
-
-        nameField.setEditable(false);
+        barCodeField.setEditable(false);
+        nameField.setEditable(true);
         priceField.setEditable(false);
 
         // == Add components to the panel
@@ -162,9 +162,8 @@ public class PurchaseItemPanel extends JPanel {
     // Fill dialog with data from the "database".
     public void fillDialogFields() {
     	
-    	if (barCodeField.getText().equals("")){
-    		barCodeField.setText(Integer.toString(getStockItemBarcodeByName()));
-    	}
+    	barCodeField.setText(Integer.toString(getStockItemBarcodeByName()));
+    	
         StockItem stockItem = getStockItemByBarcode();
 
         if (stockItem != null) {
