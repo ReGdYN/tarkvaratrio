@@ -8,11 +8,17 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
+
 import org.apache.log4j.Logger;
 
 /**
@@ -171,8 +177,43 @@ public class PurchaseTab {
       domainController.submitCurrentPurchase(
           model.getCurrentPurchaseTableModel().getTableRows()
       );
-      endSale();
+      
+   //   JFrame frame = new JFrame("Payment");
+   //   frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      
+      
+      JTextField purchasePrice = new JTextField();
+      JTextField paymentAmount = new JTextField();
+      JTextField moneyBack = new JTextField("0");
+      
+      purchasePrice.setEditable(false);
+      moneyBack.setEditable(false);
+      
+      JButton confirmPayment = new JButton("Confirm");
+      JButton revertPayment = new JButton("Reset");
+      
+      JDialog dialog = new JDialog();
+      
+      dialog.setLayout(new GridLayout(4, 2));
+      
+      dialog.setTitle("Payment");
+      
+      dialog.add(new JLabel("Total purchase price"));
+      dialog.add(purchasePrice);
+      
+      dialog.add(new JLabel("Payment amount"));
+      dialog.add(paymentAmount);
+      
+      dialog.add(new JLabel("Money back"));
+      dialog.add(moneyBack);
+      
+      dialog.add(confirmPayment);
+      dialog.add(revertPayment);
+      
+      dialog.pack();
+      dialog.setVisible(true);
       model.getCurrentPurchaseTableModel().clear();
+      
     } catch (VerificationFailedException e1) {
       log.error(e1.getMessage());
     }
