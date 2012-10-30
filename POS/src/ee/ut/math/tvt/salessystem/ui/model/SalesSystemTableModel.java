@@ -49,6 +49,15 @@ public abstract class SalesSystemTableModel<T extends DisplayableItem> extends
     public Object getValueAt(final int rowIndex, final int columnIndex) {
         return getColumnValue(rows.get(rowIndex), columnIndex);
     }
+    
+    // search for item with the specified name
+    public long getItemIdByName(String itemName) {
+        for (int i = 0; i < getRowCount(); i++) {
+            if(getValueAt(i,1).toString().equals(itemName))
+            	return (Long) getValueAt(i,0);
+        }
+        throw new NoSuchElementException();
+    }
 
     // search for item with the specified id
     public T getItemById(final long id) {
