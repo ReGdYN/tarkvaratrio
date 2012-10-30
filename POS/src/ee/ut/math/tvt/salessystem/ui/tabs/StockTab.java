@@ -5,6 +5,9 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -15,7 +18,7 @@ import javax.swing.table.JTableHeader;
 
 public class StockTab {
 
-  private JButton addItem;
+  private JButton addItemButton;
 
   private SalesSystemModel model;
 
@@ -23,6 +26,10 @@ public class StockTab {
     this.model = model;
   }
 
+  public void addItemEventHandler(){
+	    //TODO Implement: Open new window with StockAddItemPanel in it.
+  }
+  	
   // warehouse stock tab - consists of a menu and a table
   public Component draw() {
     JPanel panel = new JPanel();
@@ -58,10 +65,19 @@ public class StockTab {
     gc.anchor = GridBagConstraints.NORTHWEST;
     gc.weightx = 0;
 
-    addItem = new JButton("Add");
+    addItemButton = new JButton("Add");
+    
+    addItemButton.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+            addItemEventHandler();
+        }
+    });
+    
+       
+    
     gc.gridwidth = GridBagConstraints.RELATIVE;
     gc.weightx = 1.0;
-    panel.add(addItem, gc);
+    panel.add(addItemButton, gc);
 
     panel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
     return panel;
