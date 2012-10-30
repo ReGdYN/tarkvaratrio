@@ -1,19 +1,25 @@
 package ee.ut.math.tvt.salessystem.ui.tabs;
 
-import ee.ut.math.tvt.salessystem.ui.model.SalesSystemModel;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.JTextField;
 import javax.swing.table.JTableHeader;
+
+import ee.ut.math.tvt.salessystem.domain.data.StockItem;
+import ee.ut.math.tvt.salessystem.ui.model.SalesSystemModel;
 
 
 public class StockTab {
@@ -28,6 +34,74 @@ public class StockTab {
 
   public void addItemEventHandler(){
 	    //TODO Implement: Open new window with StockAddItemPanel in it.
+	  
+	  final JDialog dialog = new JDialog();
+	  final JTextField itemID = new JTextField();
+	  final JTextField itemName = new JTextField();
+	  final JTextField itemDescription = new JTextField();
+	  final JTextField itemPrice = new JTextField();
+	  final JTextField itemQuantity = new JTextField();
+	  
+	  final JButton addToWarehouse = new JButton("Add Item");
+	  final JButton revertWarehouseAdd = new JButton("Cancel");
+	  
+      dialog.setLayout(new GridLayout(6, 2));
+      
+      dialog.add(new JLabel("Id"));
+      dialog.add(itemID);
+      
+      dialog.add(new JLabel("Name"));
+      dialog.add(itemName);
+      
+      dialog.add(new JLabel("Description"));
+      dialog.add(itemDescription);
+      
+      dialog.add(new JLabel("Price"));
+      dialog.add(itemPrice);
+      
+      dialog.add(new JLabel("Quantity"));
+      dialog.add(itemQuantity);
+      
+      dialog.add(addToWarehouse);
+      dialog.add(revertWarehouseAdd);
+      
+      dialog.setTitle("Add item to warehouse");
+      
+      
+      dialog.pack();
+      dialog.setVisible(true);
+      
+      addToWarehouse.addActionListener(new ActionListener() {
+          public void actionPerformed(ActionEvent e) {
+              try{
+            	  long id;
+            	  String name;
+            	  String description;
+            	  double price;
+            	  int quantity;
+            	  
+            	  id=Long.parseLong(itemID.getText());
+            	  name=itemName.getText();
+            	  description=itemDescription.getText();
+            	  price=Double.parseDouble(itemPrice.getText());
+            	  quantity=Integer.parseInt(itemQuantity.getText());
+            	  
+            	  StockItem item = new StockItem(id, name, description, price, quantity);
+            	  
+            	  model.getWarehouseTableModel().addItem(item);
+            	  
+              }catch (Exception e1){
+            	  
+              }
+          }
+      });
+      
+      revertWarehouseAdd.addActionListener(new ActionListener() {
+          public void actionPerformed(ActionEvent e) {
+              dialog.setVisible(false);
+            	  dialog.dispose();
+          }
+      });
   }
   	
   // warehouse stock tab - consists of a menu and a table
