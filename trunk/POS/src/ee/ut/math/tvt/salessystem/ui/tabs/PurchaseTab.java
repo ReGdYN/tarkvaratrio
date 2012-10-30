@@ -1,5 +1,7 @@
 package ee.ut.math.tvt.salessystem.ui.tabs;
 
+import ee.ut.math.tvt.salessystem.domain.data.HistoryItem;
+import ee.ut.math.tvt.salessystem.domain.data.StockItem;
 import ee.ut.math.tvt.salessystem.domain.exception.VerificationFailedException;
 import ee.ut.math.tvt.salessystem.domain.controller.SalesDomainController;
 import ee.ut.math.tvt.salessystem.ui.model.SalesSystemModel;
@@ -8,19 +10,14 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
-import javax.swing.JDialog;
-import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
-
 import org.apache.log4j.Logger;
 
 /**
@@ -174,101 +171,61 @@ public class PurchaseTab {
   /** Event handler for the <code>submit purchase</code> event. */
   protected void submitPurchaseButtonClicked() {
 
-    
-     
-      
+		log.info("Sale complete");
 
-      //Dialogue window
-      
-      final JTextField purchasePrice = new JTextField();
-      final JTextField paymentAmount = new JTextField("0.0");
-      final JTextField moneyBack = new JTextField("0.0");
-      
-      purchasePrice.setEditable(false);
-      moneyBack.setEditable(false);
-      
-      JButton confirmPayment = new JButton("Confirm");
-      JButton revertPayment = new JButton("Reset");
-      
-      purchasePrice.setText(Double.toString(model.getCurrentPurchaseTableModel().getSum()));
-      
-      final JDialog dialog = new JDialog();
-      
-      dialog.setLayout(new GridLayout(4, 2));
-      
-      dialog.setTitle("Payment");
-      
-      dialog.add(new JLabel("Total purchase price"));
-      dialog.add(purchasePrice);
-      
-      dialog.add(new JLabel("Payment amount"));
-      dialog.add(paymentAmount);
-      
-      dialog.add(new JLabel("Money back"));
-      dialog.add(moneyBack);
-      
-      dialog.add(confirmPayment);
-      dialog.add(revertPayment);
-      
-      dialog.pack();
-      dialog.setVisible(true);
-    
-      paymentAmount.addKeyListener(new KeyListener() {
+		double sumToPay = -1;
+		double sumOfPurchase = 0;
+		double sumToReturn;
+
+		for (int i = 0; i < model.getCurrentPurchaseTableModel().getTableRows().size(); i++) {
+			sumOfPurchase += model.getCurrentPurchaseTableModel().getTableRows().get(i).getPrice() * model.getCurrentPurchaseTableModel().getTableRows().get(i).getQuantity();
+			
+		}
+		try{
+			sumToPay = Double.parseDouble(JOptionPane.showInputDialog("Balance: " + sumOfPurchase + "\nPayed:  "));			
+		}catch(Exception e){
+			JOptionPane.showMessageDialog(null,"Invalid character, numbers only.","Payment error",JOptionPane.ERROR_MESSAGE);
+		}	
 		
-		@Override
-		public void keyTyped(KeyEvent e) {
-			// TODO Auto-generated method stub
-			try {
-				double mb=0;
-				mb = Double.parseDouble(paymentAmount.getText()) -  Double.parseDouble(purchasePrice.getText()) ;
-				moneyBack.setText(Double.toString(mb));
-				
-			}catch(Exception ex){
-				
+		sumToReturn = sumToPay - sumOfPurchase;
+		
+		if (sumToReturn < 0) {
+			JOptionPane.showMessageDialog(null,"Insufficient funds","Payment error",JOptionPane.ERROR_MESSAGE);
+		}
+		
+		while(sumToReturn < 0){
+			sumToPay = Double.parseDouble(JOptionPane.showInputDialog("The sum is: " + sumOfPurchase + "\nEnter payment sum:  "));	
+			sumToReturn = sumToPay - sumOfPurchase;
+			if (sumToReturn < 0) {
+				JOptionPane.showMessageDialog(null,"The payment is not enough","Payment error",JOptionPane.ERROR_MESSAGE);	
+		
 			}
 		}
+		int intToReturn = (int)(sumToReturn*100.0);
+		int value = JOptionPane.showConfirmDialog(null,"The return sum: " + intToReturn/100.0 + "\nPress OK to confirm \nPress Cancel to exit", "Return sum", JOptionPane.OK_CANCEL_OPTION);
 		
-		@Override
-		public void keyReleased(KeyEvent e) {
-			// TODO Auto-generated method stub
+		try {
+			if (value == 0){
+				model.getHistoryTableModel().addItem(new HistoryItem(currentTime(), sumOfPurchase));
+				for (int i = 0; i < model.getCurrentPurchaseTableModel().getTableRows().size(); i++) {
+					StockItem stock = model.getWarehouseTableModel().getItemById(model.getCurrentPurchaseTableModel().getTableRows().get(i).getId());
+					stock.setQuantity(stock.getQuantity()- model.getCurrentPurchaseTableModel().getTableRows().get(i).getQuantity());
+				}
+				endSale();
+				 log.debug("Contents of the current bill:\n" + model.getCurrentPurchaseTableModel());
+				 model.getHistoryTableModel().addRow((""+model.getCurrentPurchaseTableModel()).replaceAll("\t", "    "));
+				 model.getCurrentPurchaseTableModel().clear();
+				 
+				domainController.submitCurrentPurchase(model.getCurrentPurchaseTableModel().getTableRows());
+			}
+			else if (value == 2){
+				log.info("Cancelled payment");
+			}	
 			
+		} catch (VerificationFailedException e1) {
+			log.error(e1.getMessage());
 		}
-		
-		@Override
-		public void keyPressed(KeyEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
-	});
-      
-      
-      confirmPayment.addActionListener(new ActionListener() {
-          public void actionPerformed(ActionEvent e) {
-        	    log.info("Sale complete");
-              try {
-        	      log.debug("Contents of the current basket:\n" + model.getCurrentPurchaseTableModel());
-        	      domainController.submitCurrentPurchase(
-        	          model.getCurrentPurchaseTableModel().getTableRows()
-              );
-            } catch (VerificationFailedException e1) {
-              log.error(e1.getMessage());
-            }
-               model.getCurrentPurchaseTableModel().clear(); 
-               dialog.setVisible(false);
-               dialog.dispose();
-          }
-      });
-      
-      revertPayment.addActionListener(new ActionListener() {
-          public void actionPerformed(ActionEvent e) {
-        	  dialog.setVisible(false);
-              dialog.dispose();
-          }
-      });
-      
-
-  }
-
+	}
 
 
   /* === Helper methods that bring the whole purchase-tab to a certain state
@@ -340,5 +297,11 @@ public class PurchaseTab {
 
     return gc;
   }
+  	private static final String DATE_FORMAT_NOW = " [dd/MM/yyyy HH:mm:ss]";
 
+	public static String currentTime() {
+			Calendar calendar = Calendar.getInstance();
+			SimpleDateFormat sdf = new SimpleDateFormat(DATE_FORMAT_NOW);
+		return sdf.format(calendar.getTime());
+	}
 }

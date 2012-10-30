@@ -1,10 +1,9 @@
 package ee.ut.math.tvt.salessystem.ui.model;
 
 import java.util.NoSuchElementException;
-
 import org.apache.log4j.Logger;
-
 import ee.ut.math.tvt.salessystem.domain.data.StockItem;
+import javax.swing.JOptionPane;
 
 /**
  * Stock item table model.
@@ -41,9 +40,24 @@ public class StockTableModel extends SalesSystemTableModel<StockItem> {
 	public void addItem(final StockItem stockItem) {
 		try {
 			StockItem item = getItemById(stockItem.getId());
-			item.setQuantity(item.getQuantity() + stockItem.getQuantity());
-			log.debug("Found existing item " + stockItem.getName()
-					+ " increased quantity by " + stockItem.getQuantity());
+			
+			if (stockItem.getName().equals(item.getName()) && stockItem.getPrice()==item.getPrice()) {
+				item.setQuantity(item.getQuantity() + stockItem.getQuantity());
+				log.debug("Found existing item " + stockItem.getName()
+						+ " increased quantity by " + stockItem.getQuantity());
+			} else {
+				
+				int value = JOptionPane.showConfirmDialog(null,"ID exists, create new?","Existing item", JOptionPane.OK_CANCEL_OPTION);				
+				
+				if (value == 0) {
+					long id = rows.get(rows.size()-1).getId()+1;
+					stockItem.setId(id);
+					rows.add(stockItem);
+					log.debug("Added " + stockItem.getName() 
+							+ " quantity of " + stockItem.getQuantity());
+				}	
+			}
+			
 		}
 		catch (NoSuchElementException e) {
 			rows.add(stockItem);
