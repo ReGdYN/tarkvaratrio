@@ -31,11 +31,56 @@
 	<!-- Definitions of runnable ant targets.
          Run them from the command line by executing "ant [targetname]"  -->
 
+	<target name="svn_commit">
+		<input message="Comment name?" addproperty="comment" />
+		<exec executable="svn">
+			<arg value="commit" />
+		    <arg value="${src.dir}" />
+			<arg value="-m ${comment}" />
+		</exec>
+	</target>
+	
+	<target name="svn_tag">
+	    <input message="Tag name?" addproperty="tag_name" />
+		<input message="Comment name?" addproperty="comment" />
+		<exec executable="svn">
+			<arg value="copy" />
+		    <arg value="https://tarkvaratrio.googlecode.com/svn/trunk/POS" />
+		    <arg value="https://tarkvaratrio.googlecode.com/svn/tags/${tag_name}" />
+			<arg value="-m ${comment}" />
+		</exec>
+	</target>
+	
 	<target name="run" depends="build" description="Run the template application">
 		<java classname="ee.ut.math.tvt.tarkvaratrio.Intro" classpathref="test.classpath" fork="yes" />
 	</target>
-
-	<target name="build" description="Build the system">
+	
+	<target name="revision" depends="minor,major">
+	    <propertyfile  file="version.properties">
+	    	 <entry key="build.revision.number" type="int" operation="+" value="1" pattern="0"/>
+	    </propertyfile>
+		<antcall target="current-number" />
+	</target>
+	
+	<target name="minor">
+	    <propertyfile  file="version.properties">
+            <entry key="build.minor.number" type="int" value="1" pattern="0"/>
+    	</propertyfile>
+	</target>
+	
+	<target name="major">
+	    <propertyfile  file="version.properties">
+            <entry key="build.major.number" type="int" value="1" pattern="0"/>
+	    </propertyfile>
+	</target>
+	
+	<target name="current-number">
+ 		<propertyfile  file="version.properties">
+ 		    <entry key="build.number" value="${build.major.number}.${build.minor.number}.${build.revision.number}"/>
+ 		</propertyfile>
+	</target>
+	
+	<target name="build" depends="revision" description="Build the system">
 		<mkdir dir="${build.dir}"/>
 		<mkdir dir="${build.classes.dir}"/>
 		<copy todir="${build.classes.dir}">
