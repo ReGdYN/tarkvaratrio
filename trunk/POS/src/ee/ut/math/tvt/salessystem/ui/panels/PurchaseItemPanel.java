@@ -169,7 +169,7 @@ public class PurchaseItemPanel extends JPanel {
 
         if (stockItem != null) {
             //nameField.setText(stockItem.getName());     	
-            nameField.setSelectedIndex(Integer.parseInt(barCodeField.getText())); //TODO Fix this hardcoded shit.
+            nameField.setSelectedIndex(Integer.parseInt(barCodeField.getText()));
             
             String priceString = String.valueOf(stockItem.getPrice());
             priceField.setText(priceString);
@@ -213,16 +213,28 @@ public class PurchaseItemPanel extends JPanel {
             try{
             	//TODO implement checking warehouse.
             	Integer inStock;
-            	inStock = model.getWarehouseTableModel().getItemById(Integer.parseInt(barCodeField.getText().toString())).getQuantity();
+            	Integer inCart;
             	
-            	if (quantity > inStock)
+            	inStock = model.getWarehouseTableModel().getItemById(Integer.parseInt(barCodeField.getText().toString())).getQuantity();
+            	try{
+            		//inCart = model.getCurrentPurchaseTableModel().getItemById(1l).getQuantity();
+            		inCart = model.getCurrentPurchaseTableModel().getItemById(stockItem.getId()).getQuantity();
+            		System.out.println("inCart : "+ inCart);
+            	}
+            	catch(Exception e){
+            		System.out.println("inCart exception: "+e);
+            		inCart = 0;
+            	}
+            	
+            	if ((quantity + inCart) > inStock)
             		throw new Exception("Item Stock too low.");
             	            	
 	            model.getCurrentPurchaseTableModel()
 	                .addItem(new SoldItem(stockItem, quantity));
             }catch (Exception e){
             	//TODO implement warning if item not in warehouse.
-            	JOptionPane.showMessageDialog(quantityField, "Laos pole piisavalt kaupa.");
+            	
+            	JOptionPane.showMessageDialog(quantityField, "Laos pole piisavalt kaupa."+e);
             }
         }
     }
