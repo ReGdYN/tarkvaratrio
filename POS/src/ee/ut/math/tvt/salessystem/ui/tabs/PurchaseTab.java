@@ -297,7 +297,7 @@ public class PurchaseTab {
 
     return gc;
   }
-  	private static final String DATE_FORMAT_NOW = " [dd/MM/yyyy HH:mm:ss]";
+  	private static final String DATE_FORMAT_NOW = "dd.MM.yyyy HH:mm:ss";
 
 	public static String currentTime() {
 			Calendar calendar = Calendar.getInstance();
