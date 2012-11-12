@@ -1,62 +1,69 @@
 package ee.ut.math.tvt.salessystem.domain.data;
 
+import java.math.BigDecimal;
+import java.sql.Timestamp;
+import java.util.Date;
+import java.util.List;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
+import ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel;
+
+@Entity
+@Table(name = "HISTORYITEM")
 public class HistoryItem implements Cloneable, DisplayableItem {
     
-    private String time;
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long id;
+	
+	@Column (name="date")
+    private Timestamp time;
+    
+    @Column(name="TotalSum")
+    private BigDecimal price;
 
-    private double price;
-
-    public HistoryItem(String time, double price) {
-        this.time = time;
-        this.price = price;
+    @Transient
+    private List<SoldItem> items;
+    
+    public HistoryItem(long id, List<SoldItem> items) {
+    	time = new Timestamp((long)(new Date().getTime()));
+        time.setNanos(0);
+        this.items = items;
+        this.id = id;
+        PurchaseInfoTableModel model = new PurchaseInfoTableModel();
+        model.populateWithData(items);
+        this.price = new BigDecimal(model.getTotalSum());
     }
 
     public HistoryItem() {
     }
 
-    public String getTime() {
+    public Timestamp getTime() {
         return time;
     }
 
-    public void setTime(String time) {
-        this.time = time;
-    }
-
-    public double getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-
+    
     public String toString() {
         return time + " " + price;
     }
-
-    public Object getColumn(int columnIndex) {
-        switch(columnIndex) {
-            case 0: 
-            	return time;
-            case 1: 
-            	return new Double(price);
-            default: 
-            	throw new RuntimeException("Vigane veerg!");
-        }
-    }
     
-    
-    public Object clone() {
-        HistoryItem item =
-            new HistoryItem(getTime(), getPrice());
-        return item;
+    public List<SoldItem> getItems() {
+        return items;
     }
 
         @Override
         public Long getId() {
                 // TODO Auto-generated method stub
-                return null;
+                return id;
         }
                 
 }

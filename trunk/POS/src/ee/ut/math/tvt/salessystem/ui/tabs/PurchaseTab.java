@@ -1,6 +1,7 @@
 package ee.ut.math.tvt.salessystem.ui.tabs;
 
 import ee.ut.math.tvt.salessystem.domain.data.HistoryItem;
+import ee.ut.math.tvt.salessystem.domain.data.SoldItem;
 import ee.ut.math.tvt.salessystem.domain.data.StockItem;
 import ee.ut.math.tvt.salessystem.domain.exception.VerificationFailedException;
 import ee.ut.math.tvt.salessystem.domain.controller.SalesDomainController;
@@ -19,6 +20,8 @@ import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import org.apache.log4j.Logger;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 /**
  * Encapsulates everything that has to do with the purchase tab (the tab
@@ -39,13 +42,14 @@ public class PurchaseTab {
   private PurchaseItemPanel purchasePane;
 
   private SalesSystemModel model;
+  
+  private final Session session;
 
 
-  public PurchaseTab(SalesDomainController controller,
-      SalesSystemModel model)
-  {
+  public PurchaseTab(SalesDomainController controller, SalesSystemModel model) {
     this.domainController = controller;
     this.model = model;
+    this.session = this.domainController.getSession();
   }
 
 
@@ -170,7 +174,10 @@ public class PurchaseTab {
 
   /** Event handler for the <code>submit purchase</code> event. */
   protected void submitPurchaseButtonClicked() {
-
+	  if (model.getCurrentPurchaseTableModel().getRowCount()==0) {
+          JOptionPane.showMessageDialog(null,"No items in basket","Invalid Purchase", JOptionPane.ERROR_MESSAGE);
+          return;
+	  }
 		log.info("Sale complete");
 
 		double sumToPay = -1;
@@ -180,10 +187,9 @@ public class PurchaseTab {
 		for (int i = 0; i < model.getCurrentPurchaseTableModel().getTableRows().size(); i++) {
 			sumOfPurchase += model.getCurrentPurchaseTableModel().getTableRows().get(i).getPrice() * model.getCurrentPurchaseTableModel().getTableRows().get(i).getQuantity();
 			
-		}
-		try{
+		} try {
 			sumToPay = Double.parseDouble(JOptionPane.showInputDialog("Balance: " + sumOfPurchase + "\nPayed:  "));			
-		}catch(Exception e){
+		} catch(Exception e) {
 			JOptionPane.showMessageDialog(null,"Invalid character, numbers only.","Payment error",JOptionPane.ERROR_MESSAGE);
 		}	
 		
@@ -203,10 +209,25 @@ public class PurchaseTab {
 		}
 		int intToReturn = (int)(sumToReturn*100.0);
 		int value = JOptionPane.showConfirmDialog(null,"The return sum: " + intToReturn/100.0 + "\nPress OK to confirm \nPress Cancel to exit", "Return sum", JOptionPane.OK_CANCEL_OPTION);
-		
+		int nextId = model.getHistoryTableModel().getRowCount()+1;
 		try {
 			if (value == 0){
-				model.getHistoryTableModel().addItem(new HistoryItem(currentTime(), sumOfPurchase));
+				HistoryItem newItem = new HistoryItem(nextId, model.getCurrentPurchaseTableModel().getTableRows());
+		        model.getHistoryTableModel().addItem(newItem);
+		        Transaction tx = session.beginTransaction();
+		        session.save(newItem);
+		        tx.commit();
+		        tx = session.beginTransaction();
+		        for (SoldItem i : newItem.getItems()) {
+			        i.setHistoryItem(newItem);
+			        session.save(i);
+		        }
+		        tx.commit();
+		        
+		        //model.getHistoryTableModel().addItem(new HistoryItem(nextId, sumOfPurchase));
+		        
+		        endSale();
+		        model.getCurrentPurchaseTableModel().clear();
 				for (int i = 0; i < model.getCurrentPurchaseTableModel().getTableRows().size(); i++) {
 					StockItem stock = model.getWarehouseTableModel().getItemById(model.getCurrentPurchaseTableModel().getTableRows().get(i).getId());
 					stock.setQuantity(stock.getQuantity()- model.getCurrentPurchaseTableModel().getTableRows().get(i).getQuantity());
