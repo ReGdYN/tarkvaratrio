@@ -5,9 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 
@@ -22,11 +21,11 @@ public class SoldItem implements Cloneable, DisplayableItem {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-	@Column(name = "SALE_ID")
-    private Long SaleId;
     
-	@Column(name = "STOCKITEM_ID")
+	@ManyToOne
+    private HistoryItem historyItem;
+	
+	@OneToOne
     private StockItem stockItem;
     
     @Column(name = "NAME")
@@ -40,14 +39,13 @@ public class SoldItem implements Cloneable, DisplayableItem {
     
     public SoldItem(StockItem stockItem, int quantity) {
         this.stockItem = stockItem;
-        this.id = stockItem.getId();
         this.name = stockItem.getName();
         this.price = stockItem.getPrice();
         this.quantity = quantity;
     }
     
+    public SoldItem() {}
 
-    
     public Long getId() {
         return id;
     }
@@ -90,6 +88,14 @@ public class SoldItem implements Cloneable, DisplayableItem {
 
     public void setStockItem(StockItem stockItem) {
         this.stockItem = stockItem;
+    }
+    
+    public HistoryItem getHistoryItem() {
+        return historyItem;
+    }
+    
+    public void setHistoryItem(HistoryItem historyItem) {
+        this.historyItem = historyItem;
     }
     
 }

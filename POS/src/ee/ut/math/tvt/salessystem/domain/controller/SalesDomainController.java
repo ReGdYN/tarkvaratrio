@@ -2,6 +2,9 @@ package ee.ut.math.tvt.salessystem.domain.controller;
 
 import java.util.List;
 
+import org.hibernate.Session;
+
+import ee.ut.math.tvt.salessystem.domain.data.HistoryItem;
 import ee.ut.math.tvt.salessystem.domain.data.SoldItem;
 import ee.ut.math.tvt.salessystem.domain.data.StockItem;
 import ee.ut.math.tvt.salessystem.domain.exception.VerificationFailedException;
@@ -26,6 +29,7 @@ public interface SalesDomainController {
      * 
      * @throws VerificationFailedException
      */
+    public List<HistoryItem> loadHistoryState();
     public void startNewPurchase() throws VerificationFailedException;
 
     /**
@@ -47,4 +51,5 @@ public interface SalesDomainController {
     
     public void endSession();
     
+    public Session getSession();
 }

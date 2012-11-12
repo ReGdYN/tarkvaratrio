@@ -32,6 +32,14 @@ public class PurchaseInfoTableModel extends SalesSystemTableModel<SoldItem> {
 		}
 		throw new IllegalArgumentException("Column index out of range");
 	}
+	
+	public double getTotalSum() {
+        double sumTotal = 0.00;
+        for (SoldItem i : rows) {
+        	sumTotal += i.getQuantity()*i.getPrice();
+        }
+        return sumTotal;
+    }
 
 	@Override
 	public String toString() {

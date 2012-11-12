@@ -1,7 +1,6 @@
 package ee.ut.math.tvt.tarkvaratrio;
 
 
-import java.awt.Window;
 
 import org.apache.log4j.Logger;
 import ee.ut.math.tvt.salessystem.domain.controller.SalesDomainController;
@@ -9,14 +8,12 @@ import ee.ut.math.tvt.salessystem.domain.controller.impl.SalesDomainControllerIm
 import ee.ut.math.tvt.salessystem.ui.ConsoleUI;
 import ee.ut.math.tvt.salessystem.ui.SalesSystemUI;
 
-
 public class Intro {
 	//Test
 	private static final Logger log = Logger.getLogger(Intro.class);
 	private static final String MODE = "console";
 	
 	public static void main(String[] args)  {
-		
 		final SalesDomainController domainController = new SalesDomainControllerImpl();
 
 		if (args.length == 1 && args[0].equals(MODE)) {
