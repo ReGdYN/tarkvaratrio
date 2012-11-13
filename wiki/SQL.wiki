@@ -6,20 +6,20 @@ Kirjutada ning esitada SQL-keelsed päringud, mis tagastavad järgmist:
 == 1 == 
 Päring, mis tagastab enimmüüdud kauba nime, koguse, ühiku hinna ning korrutab läbi müügihinna kogusega
 
-SELECT name, quantity, itemprice AS nimi, kogus, hind FROM PUBLIC.SOLDITEM
-WHERE quantity = (SELECT MAX(quantity) FROM PUBLIC.SOLDITEM GROUPED BY name)
+SELECT name, quantity, itemprice  FROM PUBLIC.SOLDITEM 
+WHERE quantity = (SELECT MAX(quantity) FROM PUBLIC.SOLDITEM)
 
 ===Tulemus===
-||nimi||kogus||hind||
+||NAME||QUANTITY||ITEMPRICE||
 ||A.Le.Coq Premium||10||4.0||
 
 
 == 2 == 
 Päring, mis tagastab kuupäeva, millel on tehtud kõige rohkem käivet - vajadusel peate selle välja täiendavalt juurde tekitama
 
-SELECT date AS "Suurima käibega kuupäev" FROM PUBLIC.HISTORYITEM
-WHERE totalsum = (SELECT MAX(totalsum) FROM PUBLIC.HISTORYITEM GROUPED BY date)
+SELECT date FROM PUBLIC.HISTORYITEM
+WHERE totalsum = (SELECT MAX(totalsum) FROM PUBLIC.HISTORYITEM)
 
 ===Tulemus===
 ||Suurima käibega kuupäev||
-||2012-10-16||
+||2012-10-16 17:17:17.0||
