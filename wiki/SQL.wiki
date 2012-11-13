@@ -10,8 +10,8 @@ SELECT name, quantity, itemprice AS nimi, kogus, hind FROM PUBLIC.SOLDITEM
 WHERE quantity = (SELECT MAX(quantity) FROM PUBLIC.SOLDITEM GROUPED BY name)
 
 ===Tulemus===
-||nimi||kogus||hind
-A.Le.Coq Premium||10||4.0
+||nimi||kogus||hind||
+||A.Le.Coq Premium||10||4.0
 
 
 == 2 == 
