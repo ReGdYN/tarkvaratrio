@@ -9,7 +9,7 @@
 
         <!-- Database connection settings -->
         <property name="connection.driver_class">org.hsqldb.jdbcDriver</property>
-        <property name="connection.url">jdbc:hsqldb:hsql://localhost/POS</property>
+        <property name="connection.url">jdbc:hsqldb:hsql://127.0.0.1/POS</property>
         <property name="connection.username">sa</property>
         <property name="connection.password"></property>
 
@@ -23,7 +23,7 @@
         <property name="show_sql">true</property>
 
         <mapping package="ee.ut.math.tvt.salessystem.domain.data"/>
-        <mapping class="ee.ut.math.tvt.salessystem.domain.data.Client"/>
+		<!--        <mapping class="ee.ut.math.tvt.salessystem.domain.data.Client"/> -->
         <mapping class="ee.ut.math.tvt.salessystem.domain.data.SoldItem"/>
         <mapping class="ee.ut.math.tvt.salessystem.domain.data.StockItem"/>
         <mapping class="ee.ut.math.tvt.salessystem.domain.data.HistoryItem"/>
