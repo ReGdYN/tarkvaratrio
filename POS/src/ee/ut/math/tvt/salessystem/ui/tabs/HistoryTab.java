@@ -12,6 +12,8 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.JTableHeader;
+
+import ee.ut.math.tvt.salessystem.domain.data.SoldItem;
 import ee.ut.math.tvt.salessystem.ui.model.SalesSystemModel;
 
 
@@ -28,6 +30,7 @@ public class HistoryTab {
     public Component draw() {
         JPanel panel = new JPanel();
         final JTable table = new JTable(model.getHistoryTableModel());
+        
         table.addMouseListener(new MouseListener(){
         	
         @Override
@@ -44,7 +47,10 @@ public class HistoryTab {
 
         @Override
         public void mouseReleased(MouseEvent arg0) {
-                String history = "" + model.getHistoryTableModel().getHistory().get(table.getSelectedRow());        
+        		final JTable sold = new JTable(model.getCurrentPurchaseTableModel());
+        		System.out.println(" HERE "+sold.toString());
+                //String history = "" + model.getHistoryTableModel().getHistory().get(1);
+                String history ="kala";
                 log.debug(history);
                 JOptionPane.showMessageDialog(null,"" + history, "Purchase info", JOptionPane.PLAIN_MESSAGE);
         }
